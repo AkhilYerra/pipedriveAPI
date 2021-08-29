@@ -24,9 +24,10 @@ exports.createPerson = async (req, res, next) => {
 }
 
 exports.updatePerson = async (req, res, next) => {
-    let input = req.body;
+    let input = {};
+    input = req.body;
     input.id = req.params.id;
-    const person = await personService.createPersonService(input)
+    const person = await personService.updatePersonService(input)
         .catch(
             err => {
                 //Error Handling mechanism to transform into array of errors for app.js to handle

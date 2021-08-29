@@ -8,9 +8,14 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.post('/createPerson',
+router.post('/persons',
   validationMiddleware.validatePersonBody,
   personController.createPerson
+)
+
+router.put('/persons/:id',
+  validationMiddleware.validatePersonBody,
+  personController.updatePerson
 )
 
 module.exports = router;

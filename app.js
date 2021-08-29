@@ -6,10 +6,7 @@ var logger = require('morgan');
 const port = 8080
 
 var indexRouter = require('./server/routes/index');
-var usersRouter = require('./server/routes/users');
 var routes = require('./server/routes/routes')
-
-let errorHandlingMiddleware = require('./server/middlewares/errorHandlingMiddleware')
 
 var app = express();
 
@@ -20,7 +17,6 @@ app.use(cookieParser());
 app.listen(port, () => console.log(`Hello world app listening on port ${port}!`))
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
-// app.use(errorHandlingMiddleware);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   res.status(404);

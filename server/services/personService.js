@@ -27,3 +27,5 @@ exports.updatePersonService = async (updatedPersonBody) => {
         );
     return person;
 }
+
+//Could add more services to connect to the DB and keep a log/track of any requests
